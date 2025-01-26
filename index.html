@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Productos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- inicio de sesión -->
+    <section id="login-section">
+        <h1>Inicio de Sesión</h1>
+        <form id="login-form">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="username" placeholder="Ingrese su usuario" required>
+            
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
+
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+        <p id="login-message"></p>
+    </section>
+
+    <!-- Contenido principal del sistema (oculto por defecto) -->
+    <section id="main-content" style="display: none;">
+        <header>
+            <img src="BotBlaze.jpeg" alt="Logo BotBlaze" id="logo">
+            <h1>Sistema Gestor de Productos</h1>
+        </header>
+        
+        <main>
+            <!--Formulario para ingresar los productos-->
+            <section id="formulario-productos">
+                <h2>Ingresar Nuevo Producto</h2>
+                <form id="form-agregar-producto">
+                    <label for="nombre">Nombre del Producto</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese Nombre del producto" required>
+
+                    <label for="descripcion">Descripción</label>
+                    <textarea id="descripcion" name="descripcion" placeholder="Escriba una descripcion del producto" required></textarea>
+
+                    <label for="precio">Precio Unitario:</label>
+                    <input type="number" id="precio" name="precio" placeholder="Ingrese monto" step="0.01" required>
+
+                    <label for="cantidad">Cantidad Inicial en Inventario:</label>
+                    <input type="number" id="cantidad" name="cantidad" required>
+                    
+
+                    <button type="submit">Agregar Producto</button>
+                </form>
+            </section>
+
+            <!--En esta parte se hace la búsqueda y se aplican los filtros-->
+            <section id="busqueda-filtros">
+                <h2>Busqueda y Filtros</h2>
+                <input type="text" id="busqueda" placeholder="Buscar por nombre">
+
+                <div id="filtros">
+                    <label for="filtro-precio">Filtrar por Precio:</label>
+                    <input type="number" id="filtro-precio" step="0.01">
+
+                    <button id="aplicar-filtros">Haz click para filtrar</button>
+                </div>
+            </section>
+
+            <!--Tabla para mostrar los productos ingresados-->
+            <section id="lista-productos">
+                <h2>Lista de Productos Ingresados</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--Los productos se añadirán aquí-->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </section>
+
+    <!-- Archivos JavaScript -->
+    <script src="login.js" defer></script>
+    <script src="app.js" defer></script>
+</body>
+</html>
